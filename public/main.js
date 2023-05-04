@@ -2,18 +2,22 @@
 
 // For storing user's theme selection in the browser
 function storeTheme(themeName) {
-    // Your code here
+    localStorage.setItem("theme", themeName);
 }
 
 // For restoring theme, if selected by the user in the past
 function restoreTheme() {
-    // Your code here
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+        setTheme(theme);
+    }
+
 }
 
 // For clearing theme selection from the browser's storage (reset to default)
 
 function clearTheme() {
-    // Your code here
+    localStorage.removeItem("theme");
 }
 
 /* ================================ PHASE 2 ================================ */
